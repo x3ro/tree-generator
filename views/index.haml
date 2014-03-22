@@ -1,0 +1,14 @@
+%h1 The one and online tree generator
+%table
+  %tr
+    %td
+      %form{:action => '/', :method => :post}
+        %textarea{:name => 'input'}= @input
+        %br
+        %select{:name => :symbols}
+          %option{:selected => @symbols == :ascii} ASCII
+          %option{:selected => @symbols == :"utf8"} UTF8
+        %input{:type => 'submit'}
+    %td
+      %pre
+        %code= @tree
